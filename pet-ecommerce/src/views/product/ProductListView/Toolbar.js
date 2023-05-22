@@ -124,8 +124,6 @@ const Toolbar = ({ className, ...rest }) => {
                     <MenuItem value={categoria.id}>{categoria.nome}</MenuItem>
                   );
                 })}
-
-                <MenuItem value={"Outro"}>Outro</MenuItem>
               </Select>
             </Grid>
             <Grid item xs={4}>

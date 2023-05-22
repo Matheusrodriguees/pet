@@ -188,7 +188,7 @@ const RegisterView = () => {
                   {' '}
                   <Link
                     component={RouterLink}
-                    to="/login"
+                    to="src/views/auth/RegisterView"
                     variant="h6"
                   >
                     Sign in

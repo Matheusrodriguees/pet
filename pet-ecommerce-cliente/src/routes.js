@@ -30,12 +30,16 @@ import Pedidos from 'src/views/pedidos/index'
 //Paginas Cupons 
 import Cupons from 'src/views/cupons'
 
+//auth 'src/views/auth/LoginView
+import Login from 'src/views/auth/LoginView'
+
 const routes = [
   {
     path: 'app',
     element: <DashboardLayout />,
     children: [
-      { path: 'inicio', element: <Produtos /> },
+      { path: 'inicio', element: <Login /> },
+      { path: 'home', element: <Produtos/>},
       { path: 'clientes', element: <Clientes /> },
       { path: 'novo-cliente', element: <NovoCliente /> },
       { path: 'editar-cliente/:id', element: <NovoCliente /> },
@@ -57,7 +61,7 @@ const routes = [
     element: <DashboardLayout />,
     children: [
       { path: 'login', element: <Navigate to="/404" /> },
-      { path: 'register', element: <Navigate to="/404" /> },
+      { path: 'register', element: <Navigate to="src/views/auth/RegisterView" /> },
       { path: '404', element: <NotFoundView /> },
       { path: '/', element: <Navigate to="/app/inicio" /> },
       { path: '*', element: <Navigate to="/404" /> }

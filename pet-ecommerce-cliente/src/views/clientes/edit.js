@@ -129,7 +129,7 @@ const App = (props) => {
         <Page title="Clientes">
             <Container maxWidth={true}>
                 <Grid container spacing={3}>
-                    <Grid item lg={12} sm={12} xs={12} xs={12}>
+                    <Grid item lg={12} sm={12} xs={12}>
                         <Card>
                             <CardContent>
                                 <Typography className={classes.titulo}>

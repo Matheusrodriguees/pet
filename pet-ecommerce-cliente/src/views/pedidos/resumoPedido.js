@@ -112,7 +112,7 @@ const App = () => {
 
     // useEffect(() => {
     //     calculaProdutos()
-    // }, [pedidoContext.carrinho, pedidoContext.carrinho.frete]);
+    // }, [pedidoContext.carrinho]);
 
     // function calculaProdutos() {
     //     let valor = 0
@@ -124,13 +124,19 @@ const App = () => {
     //     setTotal(frete + valor)
     // }
 
+
     function validaDados() {
+        if (!pedidoContext.frete) {
+            pedidoContext.frete = pedidoContext.valor*0.05;
+            console.log(pedidoContext);
+        }
         if (!pedidoContext.endereco ||
             //  pedidoContext.pagamento?.length < 0 ||
             !pedidoContext.frete)
             // !pedidoContext.parcela)
              {
             setOpen(true)
+            return true;
         }else{
             return true
         }

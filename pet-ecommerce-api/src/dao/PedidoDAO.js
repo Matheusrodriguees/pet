@@ -109,7 +109,7 @@ FROM pedidos
                                          cupom_codigo)
                      VALUES (?, ?, ?, ?, ?, ?, ?) `;
     const values = [
-      pedido.cliente.id,
+      43,
       pedido.data,
       pedido.valor,
       pedido.status.id,
@@ -117,6 +117,7 @@ FROM pedidos
       pedido.endereco.id,
       pedido.cupom ? pedido.cupom.id : null,
     ];
+    console.log("values", values)
     const result = await conn.execute(sql, values);
     pedido.id = result[0].insertId;
 
@@ -151,13 +152,13 @@ FROM pedidos
         const values = [pag.codigo, pedido.id];
         const result = await conn.execute(sql, values);
 
-      } else if (pag.pagTipo == 'cartao') {
-        const sql = `INSERT INTO cartoespedido(cartao_id, pedido_id)
-                VALUES (?, ?) `;
-        const values = [pag.id, pedido.id];
-        const result = await conn.execute(sql, values);
-      }
-    }
+      // } else if (pag.pagTipo == 'cartao') {
+      //   const sql = `INSERT INTO cartoespedido(cartao_id, pedido_id)
+      //           VALUES (?, ?) `;
+      //   const values = [pag.id, pedido.id];
+      //   const result = await conn.execute(sql, values);
+      // }
+    }}
     return pedido;
   }
   async editar(id, dados) {

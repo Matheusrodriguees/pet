@@ -43,7 +43,7 @@ const LoginView = () => {
         <Container maxWidth="sm">
           <Formik
             initialValues={{
-              email: 'demo@devias.io',
+              email: 'matheus.rodrigues@techCia.com',
               password: 'Password123'
             }}
             validationSchema={Yup.object().shape({
@@ -51,7 +51,7 @@ const LoginView = () => {
               password: Yup.string().max(255).required('Password is required')
             })}
             onSubmit={() => {
-              navigate('/app/inicio', { replace: true });
+              navigate('/app/home', { replace: true });
             }}
           >
             {({

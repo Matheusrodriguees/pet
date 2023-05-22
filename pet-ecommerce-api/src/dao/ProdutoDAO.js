@@ -23,7 +23,9 @@ class ProdutoDAO {
               JOIN
           categorias c ON c.id = p.categoria_id
               JOIN 
-          estoques e on e.produto_id = p.id;
+          estoques e on e.produto_id = p.id
+      WHERE
+          e.quantidadeAtual > 0;
         `);
     // Converte o dado puro que foi recebido do banco de dado para uma entidade do dominio
     return rows.map((item) => {
